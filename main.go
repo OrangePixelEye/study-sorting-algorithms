@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"sorting/algorithms"
+	"sorting/basics"
 )
 
 func main() {
@@ -11,4 +12,18 @@ func main() {
 
 	var comb = algorithms.BasicCombinations([]string{"a", "b", "c"})
 	fmt.Println(comb)
+
+	var appendArr = basics.AppendTwoArrays([]string{"DEFAULT", "text"}, []string{"loren", "ipsun"})
+	fmt.Println(appendArr)
+
+	var elements [][]int
+	elements = [][]int{{
+		1, 5, 4, 3,
+	}, {
+		12, 45, 212,
+	}}
+	fmt.Println(basics.RemoveFirstElement(elements[0]))
+	fmt.Println(basics.RemoveLastElement(elements[1]))
+
+	fmt.Println(basics.FlipArray(elements[0]))
 }
