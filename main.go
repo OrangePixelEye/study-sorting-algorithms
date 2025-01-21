@@ -7,6 +7,9 @@ import (
 )
 
 func main() {
+	var str = basics.RemoveAllSymbols("dsdsaf asdf @122")
+	fmt.Println(str)
+
 	var result = algorithms.BinarySearchRecursiveHelper([]int{1, 2, 32, 35, 46, 55, 233}, 233)
 	fmt.Println(result)
 
