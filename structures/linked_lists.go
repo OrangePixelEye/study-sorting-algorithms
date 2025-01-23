@@ -55,12 +55,33 @@ func (list *LinkedList) Pop() (int, error) {
 	return value, nil
 }
 
-func (list *LinkedList) Remove() {
-
+func (list *LinkedList) RemoveFirst() (int, error) {
+	if list.Size == 0 {
+		return 0, errors.New("Cant pop empty list")
+	}
+	list.Size--
+	value := list.head.data
+	if list.Size == 0 {
+		list.head = nil
+		list.tail = nil
+		return value, nil
+	} else {
+		list.head = list.head.next
+		list.head.prev = nil
+		return value, nil
+	}
 }
 
-func (list *LinkedList) Search(val int) int {
-	return -1
+func (list *LinkedList) Has(val int) bool {
+	element := list.head
+	for element != nil {
+		if element.data == val {
+			return true
+		}
+		element = element.next
+	}
+
+	return false
 }
 
 func (list *LinkedList) Transverse() {
