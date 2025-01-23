@@ -12,7 +12,9 @@ func main() {
 	list.Push(2)
 	list.Push(4)
 	list.Push(5)
-	list.Transverse()
+	list.Pop()
+	list.Pop()
+	list.ReverseTransverse()
 
 	var str = basics.RemoveAllSymbols("dsdsaf asdf @122")
 	fmt.Println(str)

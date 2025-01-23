@@ -1,6 +1,9 @@
 package structures
 
-import "log"
+import (
+	"errors"
+	"log"
+)
 
 type LinkedListNode struct {
 	data int
@@ -32,7 +35,24 @@ func (list *LinkedList) Push(val int) {
 	currentTail.next = newNode
 	newNode.prev = currentTail
 	list.tail = newNode
+}
 
+func (list *LinkedList) Pop() (int, error) {
+	if list.Size == 0 {
+		return 0, errors.New("Cant pop empty list")
+	}
+
+	value := list.tail.data
+	list.Size--
+
+	if list.Size == 0 {
+		list.tail = nil
+	} else {
+		list.tail = list.tail.prev
+		list.tail.next = nil
+	}
+
+	return value, nil
 }
 
 func (list *LinkedList) Remove() {
@@ -53,5 +73,10 @@ func (list *LinkedList) Transverse() {
 }
 
 func (list *LinkedList) ReverseTransverse() {
+	element := list.tail
 
+	for element != nil {
+		log.Println(element.data)
+		element = element.prev
+	}
 }
