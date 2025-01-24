@@ -37,4 +37,14 @@ func main() {
 	fmt.Println(basics.RemoveLastElement(elements[1]))
 
 	fmt.Println(basics.FlipArray(elements[0]))
+
+	myStack := structures.NewStack()
+	myStack.Push(2)
+	myStack.Push(4)
+	fmt.Println(myStack.Peek())
+	myStack.Pop()
+
+	fmt.Println(myStack.Peek())
+	myStack.Pop()
+	fmt.Println(myStack.Peek())
 }
