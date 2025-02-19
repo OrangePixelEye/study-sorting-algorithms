@@ -12,7 +12,7 @@ type QueueNode struct {
 type Queue struct {
 	head *QueueNode
 	tail *QueueNode
-	size int
+	Size int
 }
 
 func NewQueue() *Queue {
@@ -22,7 +22,8 @@ func NewQueue() *Queue {
 // Enqueue adds an element to the back of the queue.
 func (q *Queue) Enqueue(data int) {
 	newNode := &QueueNode{data: data}
-	if q.head == nil {
+	q.Size++
+  if q.head == nil {
 		q.head = newNode
 	} else {
 		q.tail.next = newNode
@@ -32,7 +33,8 @@ func (q *Queue) Enqueue(data int) {
 
 // Dequeue removes and returns the element at the front of the queue.
 func (q *Queue) Dequeue() (int, error) {
-	if q.head == nil {
+	q.Size--
+  if q.head == nil {
 		return 0, errors.New("Queue is empty")
 	}
 	item := q.head.data
