@@ -9,6 +9,7 @@ import (
 )
 
 func main() {
+  fmt.Println(slidingtechnique.MinumumSizeSubarray([]int{2, 3, 1, 2, 3, 3}, 7))
   fmt.Println(slidingtechnique.LongestSubstring("abcjkabcbb"))
 
   fmt.Println(slidingtechnique.ContainsDuplicate([]int{1, 2,  3, 4, 3}, 2))
