@@ -9,6 +9,8 @@ import (
 )
 
 func main() {
+  fmt.Println(slidingtechnique.LongestSubstring("abcjkabcbb"))
+
   fmt.Println(slidingtechnique.ContainsDuplicate([]int{1, 2,  3, 4, 3}, 2))
 
   maxSum := slidingtechnique.MaxSum([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 3)
